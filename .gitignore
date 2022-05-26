@@ -105,3 +105,7 @@ dist
 
 # Carpeta de assets
 ./avanzado/assets
+*.mp4
+*.jpg
+*.svg
+*.png
