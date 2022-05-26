@@ -58,13 +58,14 @@ function areaCirculo(radio)
 {
     return PI * (radio ** 2);
 }
+console.groupEnd();
 
 // Aqui interactuamos con el HTML
 
 function calcularPerimetroCuadrado()
 {
     const input = document.getElementById("inputCuadrado");
-    const value = input.value;
+    const value = parseFloat(input.value);
 
     const perimetro = perimetroCuadrado(value);
     alert("El valor del perímetro del cuadrado es: " + perimetro);
@@ -73,8 +74,51 @@ function calcularPerimetroCuadrado()
 function calcularAreaCuadrado()
 {
     const input = document.getElementById("inputCuadrado");
-    const value = input.value;
+    const value = parseFloat(input.value);
 
     const area = areaCuadrado(value);
     alert("El valor del área del cuadrado es: " + area);
+}
+
+function calcularPerimetroTriangulo()
+{
+    const inputA = document.getElementById("inputTrianguloA");
+    const ladoA = parseFloat(inputA.value);
+    const inputB = document.getElementById("inputTrianguloB");
+    const ladoB = parseFloat(inputB.value);
+    const inputBase = document.getElementById("inputTrianguloBase");
+    const base = parseFloat(inputBase.value);
+    
+    console.log(ladoA);
+    const perimetro = perimetroTriangulo(ladoA, ladoB, base);
+    alert("El valor del perímetro del Triangulo es: " + perimetro);
+}
+
+function calcularAreaTriangulo()
+{
+    const inputBase = document.getElementById("inputTrianguloBase");
+    const base = parseFloat(inputBase.value);
+    const inputHeight = document.getElementById("inputTrianguloHeight");
+    const height = parseFloat(inputHeight.value);
+
+    const area = areaTriangulo(base, height);
+    alert("El valor del área del Triangulo es: " + area);
+}
+
+function calcularPerimetroCirculo()
+{
+    const input = document.getElementById("inputCirculo");
+    const value = parseFloat(input.value);
+
+    const perimetro = perimetroCirculo(value);
+    alert("El valor del perímetro del Circulo es: " + perimetro.toFixed(2));
+}
+
+function calcularAreaCirculo()
+{
+    const input = document.getElementById("inputCirculo");
+    const value = parseFloat(input.value);
+
+    const area = areaCirculo(value);
+    alert("El valor del área del Circulo es: " + area.toFixed(2));
 }

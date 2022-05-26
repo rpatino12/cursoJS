@@ -1,18 +1,5 @@
 :root
 {
-    /* Colors */
-    --bitcoin-orange: #F7931A;
-    --soft-orange:#FFE9D5;
-    --secondary-blue:#1A9AF7;
-    --soft-blue:#E7F5FF;
-    --warm-black:#201E1C;
-    --black:#282623;
-    --grey:#BABABA;
-    --off-white:#FAF8F7;
-    --just-white:#FFFFFF;
-    --shadow-color: rgba(89, 73, 30, 0.16);
-    --font-color: #575757;
-
     /* Font sizes */
     --sm:1.2rem;
     --md:1.4rem;
@@ -20,15 +7,6 @@
     --h2-size:1.8rem;
     --h1-size:2.4rem;
 }
-/*
-Orden para agregar cada regla de css
-
-1. Posicionamiento --> static, absolute, relative, fixed
-2. Modelo de caja (Box model) --> margin, border, padding, content
-3. Tipografía --> tipos, tamaños de fuente, etc
-4. Estilos visuales --> box-shadow, border-radius, gradient, etc
-5. Otros --> reglas CSS y más
-*/
 *
 {
     box-sizing: border-box;
@@ -38,6 +16,115 @@ Orden para agregar cada regla de css
 html
 {
     font-size: 62.5%;
-    font-family: 'DM Sans', sans-serif;
-    /* font-family: 'Inter', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+body
+{
+    font-size: var(--md);
+    background-color: #beedd5;
+}
+.container header
+{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 20px 16px;
+    background-color: #62d69a;
+    box-shadow: 0px 4px 8px #2b83567c;
+}
+.container header h1
+{
+    margin-bottom: 12px;
+}
+.container main
+{
+    width: 100%;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-top: 20px;
+    padding: 0 16px;
+}
+.container main section
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    background: #beedd5;
+    box-shadow:  12px 12px 16px #a2c9b5, -12px -12px 16px #dbfff5;
+    padding: 28px;
+    margin-bottom: 20px;
+}
+.container main section .title-section
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.container main .square .title-section div
+{
+    width: 40px;
+    height: 40px;
+    background-color: #31a167;
+}
+.container main .triangle .title-section div
+{
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #31a167;
+
+}
+.container main .circle .title-section div
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #31a167;
+}
+
+.container main section form
+{
+    display: flex;
+    flex-direction: column;
+}
+.container main section form p
+{
+    margin-bottom: 8px;
+}
+.container main section form input[type="number"]
+{
+    width: 120px;
+    height: 24px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 4px 4px 8px #2b83567c;
+    padding: 0 8px;
+    margin: 4px 0 16px;
+}
+.container main section form button
+{
+    width: fit-content;
+    min-width: 100px;
+    height: 28px;
+    padding: 0 8px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #62d69a;
+    box-shadow: 4px 4px 8px #2b83567c;
+    cursor: pointer;
+}
+.container main section form button:hover
+{
+    background-color: #71f0ae;
+    box-shadow: 4px 4px 8px #1e69427c;
 }

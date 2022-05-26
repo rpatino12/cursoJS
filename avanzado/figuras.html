@@ -7,35 +7,101 @@
 
     <link rel="stylesheet" href="./styles/figuras.css">
 
-    <title>MathBot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <title>GeometryBot</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="./assets/icons8-bmo-64.png">
 </head>
 <body>
-    <header>
-        <h1>
-            Figuras geométricas
-        </h1>
-        <p>Este es el primer taller del curso práctico de Javascript</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>
+                GeometryBot
+            </h1>
+            <p>Hi! I'm GeometryBot and I'm here to help you learn more about geometric shapes</p>
+        </header>
+    
+        <main>
+            <h2>Geometric shapes</h2>
+            <section class="square">
+                <div class="title-section">
+                    <div></div>
+                    <h3>Square</h3>
+                </div>
+                <form>
+                    <label for="inputCuadrado">Type the size of one side of your square:</label>
 
-    <main>
-        <h2>Calculadora de figuras geométricas</h2>
-        <section>
-            <h3>Cuadrado</h3>
-            <form>
-                <label for="inputCuadrado">Escribe cuanto mide cada lado de tu cuadrado:</label>
-                <input id="inputCuadrado" type="number">
-                <button type="button" onclick="calcularPerimetroCuadrado()">
-                    Calcular el perímetro
-                </button>
-                <button type="button" onclick="calcularAreaCuadrado()">
-                    Calcular el área
-                </button>
-            </form>
-        </section>
+                    <input id="inputCuadrado" type="number">
 
-    </main>
+                    <div class="buttons-container">
+                        <button type="button" onclick="calcularPerimetroCuadrado()" class="primary-button">
+                            Get perimeter
+                        </button>
+    
+                        <button type="button" onclick="calcularAreaCuadrado()" class="primary-button">
+                            Get area
+                        </button>
+                    </div>
+                </form>
+            </section>
+            <section class="triangle">
+                <div class="title-section">
+                    <div></div>
+                    <h3>Triangle</h3>
+                </div>
+                <form>
+                    <p>Type the size of each side of your Triangle:</p>
+
+                    <label for="inputTrianguloA">Side A</label>
+                    <input id="inputTrianguloA" type="number">
+
+                    <label for="inputTrianguloB">Side B</label>
+                    <input id="inputTrianguloB" type="number">
+
+                    <label for="inputTrianguloBase">Base</label>
+                    <input id="inputTrianguloBase" type="number">
+
+                    <label for="inputTrianguloHeight">Height</label>
+                    <input id="inputTrianguloHeight" type="number">
+
+                    <div class="buttons-container">
+                        <button type="button" onclick="calcularPerimetroTriangulo()" class="primary-button">
+                            Get perimeter
+                        </button>
+    
+                        <button type="button" onclick="calcularAreaTriangulo()" class="primary-button">
+                            Get area
+                        </button>
+                    </div>
+                </form>
+            </section>
+            <section class="circle">
+                <div class="title-section">
+                    <div></div>
+                    <h3>Circle</h3>
+                </div>
+                <form>
+                    <label for="inputCirculo">Type the radius of your circle:</label>
+
+                    <input id="inputCirculo" type="number">
+
+                    <div class="buttons-container">
+                        <button type="button" onclick="calcularPerimetroCirculo()" class="primary-button">
+                            Get perimeter
+                        </button>
+    
+                        <button type="button" onclick="calcularAreaCirculo()" class="primary-button">
+                            Get area
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+    </div>
     
     <script src="./figuras.js"></script>
 </body>
