@@ -77,5 +77,4 @@ function calcularAreaCuadrado()
 
     const area = areaCuadrado(value);
     alert("El valor del área del cuadrado es: " + area);
-
 }

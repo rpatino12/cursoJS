@@ -4,29 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=6.0, minimum-scale=1.0">
-    <title>Figuras geométricas</title>
+
+    <link rel="stylesheet" href="./styles/figuras.css">
+
+    <title>MathBot</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/icons8-bmo-64.png">
 </head>
 <body>
     <header>
         <h1>
             Figuras geométricas
         </h1>
-        <p>Este es el primer taller del curso practico de Javascript</p>
+        <p>Este es el primer taller del curso práctico de Javascript</p>
     </header>
 
-    <section>
-        <h2>Calcula el area y perimetro de un cuadrado</h2>
-        <form>
-            <label for="inputCuadrado">Escribe cuanto mide cada lado de tu cuadrado:</label>
-            <input id="inputCuadrado" type="number">
-            <button type="button" onclick="calcularPerimetroCuadrado()">
-                Calcular el perímetro
-            </button>
-            <button type="button" onclick="calcularAreaCuadrado()">
-                Calcular el área
-            </button>
-        </form>
-    </section>
+    <main>
+        <h2>Calculadora de figuras geométricas</h2>
+        <section>
+            <h3>Cuadrado</h3>
+            <form>
+                <label for="inputCuadrado">Escribe cuanto mide cada lado de tu cuadrado:</label>
+                <input id="inputCuadrado" type="number">
+                <button type="button" onclick="calcularPerimetroCuadrado()">
+                    Calcular el perímetro
+                </button>
+                <button type="button" onclick="calcularAreaCuadrado()">
+                    Calcular el área
+                </button>
+            </form>
+        </section>
+
+    </main>
     
     <script src="./figuras.js"></script>
 </body>
