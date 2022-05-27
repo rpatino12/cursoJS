@@ -35,7 +35,7 @@ function onClickButtonDiscount()
     };
     
     console.log(isCouponValueValid);
-    // Y esta variable la vamos a enviar como parámetro a nuestra función array.find()
+    // Y esta variable la vamos a enviar como parámetro a nuestra función array.find(), ya que el parametro por sintaxis que requiere la funcion array.find() es una comparacion, e internamente recorre el array
     const userCoupon = coupons.find(isCouponValueValid);
 
     console.log(userCoupon);
