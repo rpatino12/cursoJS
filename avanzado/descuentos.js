@@ -22,19 +22,22 @@ function onClickButtonDiscount()
 
     let discount;
 
-    switch(couponValue)
+    if (!coupons.includes(couponValue))
     {
-        case coupons[0]: // "giveMe15"
-            discount = 15;
-        break;
-        case coupons[1]: // "secretCupon"
-            discount = 30;
-        break;
-        case coupons[2]: // "50_Off"
-            discount = 50;
-        break;
-        default:
-            discount = 0;
+        alert(`El cupon ${couponValue} no es valido`);
+        discount = 0;
+    }
+    else if (couponValue === coupons[0]) // "giveMe15"
+    {
+        discount = 15;
+    }
+    else if (couponValue === coupons[1]) // "secretCoupon"
+    {
+        discount = 30;
+    }
+    else if (couponValue === coupons[2]) // "50_Off"
+    {
+        discount = 50;
     }
 
     const precioConDescuento = calcularPrecioConDescuento(priceValue, discount);
