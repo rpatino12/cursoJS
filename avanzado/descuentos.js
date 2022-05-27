@@ -7,9 +7,18 @@ function calcularPrecioConDescuento(precio, descuento)
 }
 
 const coupons = [
-    "giveMe15",
-    "secretCoupon",
-    "50_Off"
+    {
+        name: "giveMe15",
+        discount: 15,
+    },
+    {
+        name: "secretCoupon",
+        discount: 30,
+    },
+    {
+        name: "50_Off",
+        discount: 50,
+    },
 ];
 
 function onClickButtonDiscount()
@@ -20,28 +29,28 @@ function onClickButtonDiscount()
     const inputCoupon = document.getElementById("inputCoupon");
     const couponValue = inputCoupon.value;
 
-    let discount;
+    // Creamos una variable con una función que valide si su parámetro coupon es igual a nuestra variable couponValue.
+    const isCouponValueValid = function(coupon) {
+        return coupon.name === couponValue;
+    };
+    
+    console.log(isCouponValueValid);
+    // Y esta variable la vamos a enviar como parámetro a nuestra función array.find()
+    const userCoupon = coupons.find(isCouponValueValid);
 
-    if (!coupons.includes(couponValue))
+    console.log(userCoupon);
+
+    if (!userCoupon) 
     {
         alert(`El cupon ${couponValue} no es valido`);
-        discount = 0;
     }
-    else if (couponValue === coupons[0]) // "giveMe15"
+    else
     {
-        discount = 15;
-    }
-    else if (couponValue === coupons[1]) // "secretCoupon"
-    {
-        discount = 30;
-    }
-    else if (couponValue === coupons[2]) // "50_Off"
-    {
-        discount = 50;
-    }
+        const discount = userCoupon.discount;
 
-    const precioConDescuento = calcularPrecioConDescuento(priceValue, discount);
+        const precioConDescuento = calcularPrecioConDescuento(priceValue, discount);
 
-    const resultP = document.getElementById("resultPrice");
-    resultP.innerText = "El precio con descuento es: $" + precioConDescuento;
+        const resultP = document.getElementById("resultPrice");
+        resultP.innerText = "El precio con descuento es: $" + precioConDescuento;
+    }
 }
