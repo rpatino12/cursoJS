@@ -26,81 +26,90 @@
     
         <main>
             <h2>Geometric shapes</h2>
-            <section class="square">
-                <div class="title-section">
-                    <div></div>
-                    <h3>Square</h3>
-                </div>
-                <form>
-                    <label for="inputCuadrado">Type the size of one side of your square:</label>
-
-                    <input id="inputCuadrado" type="number">
-
-                    <div class="buttons-container">
-                        <button type="button" onclick="calcularPerimetroCuadrado()" class="primary-button">
-                            Get perimeter
-                        </button>
-    
-                        <button type="button" onclick="calcularAreaCuadrado()" class="primary-button">
-                            Get area
-                        </button>
+            <div class="shapes-container">
+                <section class="square">
+                    <div class="title-section">
+                        <div></div>
+                        <h3>Square</h3>
                     </div>
-                </form>
-            </section>
-            <section class="triangle">
-                <div class="title-section">
-                    <div></div>
-                    <h3>Triangle</h3>
-                </div>
-                <form>
-                    <p>Type the size of each side of your Triangle:</p>
-
-                    <label for="inputTrianguloA">Side A</label>
-                    <input id="inputTrianguloA" type="number">
-
-                    <label for="inputTrianguloB">Side B</label>
-                    <input id="inputTrianguloB" type="number">
-
-                    <label for="inputTrianguloBase">Base</label>
-                    <input id="inputTrianguloBase" type="number">
-
-                    <label for="inputTrianguloHeight">Height</label>
-                    <input id="inputTrianguloHeight" type="number">
-
-                    <div class="buttons-container">
-                        <button type="button" onclick="calcularPerimetroTriangulo()" class="primary-button">
-                            Get perimeter
-                        </button>
+                    <form>
+                        <label for="inputCuadrado">Type the size of one side of your square:</label>
     
-                        <button type="button" onclick="calcularAreaTriangulo()" class="primary-button">
-                            Get area
-                        </button>
-                    </div>
-                </form>
-            </section>
-            <section class="circle">
-                <div class="title-section">
-                    <div></div>
-                    <h3>Circle</h3>
-                </div>
-                <form>
-                    <label for="inputCirculo">Type the radius of your circle:</label>
-
-                    <input id="inputCirculo" type="number">
-
-                    <div class="buttons-container">
-                        <button type="button" onclick="calcularPerimetroCirculo()" class="primary-button">
-                            Get perimeter
-                        </button>
+                        <input id="inputCuadrado" type="number">
     
-                        <button type="button" onclick="calcularAreaCirculo()" class="primary-button">
-                            Get area
-                        </button>
+                        <div class="demo" id="demoPerimetro1"></div>
+                        <div class="demo" id="demoArea1"></div>
+    
+                        <div class="buttons-container">
+                            <button type="button" onclick="calcularPerimetroCuadrado()" class="primary-button">
+                                Get perimeter
+                            </button>
+        
+                            <button type="button" onclick="calcularAreaCuadrado()" class="primary-button">
+                                Get area
+                            </button>
+                        </div>
+                    </form>
+                </section>
+                <section class="triangle">
+                    <div class="title-section">
+                        <div></div>
+                        <h3>Triangle</h3>
                     </div>
-                </form>
-            </section>
+                    <form>
+                        <p>Type the size of each side of your Triangle (Disclaimer! It has to be equilateral or isoceles triangle):</p>
+    
+                        <label for="inputTrianguloA">Side A</label>
+                        <input id="inputTrianguloA" type="number">
+    
+                        <label for="inputTrianguloB">Side B</label>
+                        <input id="inputTrianguloB" type="number">
+    
+                        <label for="inputTrianguloBase">Base</label>
+                        <input id="inputTrianguloBase" type="number">
+    
+                        <div class="demo" id="demoAltura"></div>
+    
+                        <div class="demo" id="demoPerimetro2"></div>
+                        <div class="demo" id="demoArea2"></div>
+    
+                        <div class="buttons-container">
+                            <button type="button" onclick="calcularPerimetroTriangulo()" class="primary-button">
+                                Get perimeter
+                            </button>
+        
+                            <button type="button" onclick="calcularAreaTriangulo()" class="primary-button">
+                                Get area
+                            </button>
+                        </div>
+                    </form>
+                </section>
+                <section class="circle">
+                    <div class="title-section">
+                        <div></div>
+                        <h3>Circle</h3>
+                    </div>
+                    <form>
+                        <label for="inputCirculo">Type the radius of your circle:</label>
+    
+                        <input id="inputCirculo" type="number">
+    
+                        <div class="demo" id="demoPerimetro3"></div>
+                        <div class="demo" id="demoArea3"></div>
+    
+                        <div class="buttons-container">
+                            <button type="button" onclick="calcularPerimetroCirculo()" class="primary-button">
+                                Get perimeter
+                            </button>
+        
+                            <button type="button" onclick="calcularAreaCirculo()" class="primary-button">
+                                Get area
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
         </main>
-
     </div>
     
     <script src="./figuras.js"></script>

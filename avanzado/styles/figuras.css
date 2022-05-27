@@ -47,6 +47,13 @@ body
     margin-top: 20px;
     padding: 0 16px;
 }
+.container main .shapes-container 
+{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 .container main section
 {
     display: flex;
@@ -101,13 +108,20 @@ body
 }
 .container main section form input[type="number"]
 {
-    width: 120px;
+    width: 100px;
     height: 24px;
     border: none;
     border-radius: 4px;
     box-shadow: 4px 4px 8px #2b83567c;
     padding: 0 8px;
     margin: 4px 0 16px;
+}
+
+.container main section form .demo
+{
+    height: 28px;
+    width: fit-content;
+    margin-bottom: 12px;
 }
 .container main section form button
 {
