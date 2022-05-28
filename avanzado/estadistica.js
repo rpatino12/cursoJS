@@ -2,13 +2,6 @@
 
 function calcularMediaAritmetica(arr)
 {
-    // let sumaArr = 0;
-
-    // for (let i=0; i < arr.length; i++)
-    // {
-    //     sumaArr += arr[i];
-    // }
-
     // El metodo reduce recorre todo el array y aplica sobre los elementos la funcion que recibe por parametro, que en este caso esa funcion es para ir sumando cada elemento dentro de "valorAcumulado" y el valor que itera es el parametro "elemento"
     const sumaArr = arr.reduce(
         function(valorAcumulado = 0, elemento) 
@@ -21,8 +14,6 @@ function calcularMediaAritmetica(arr)
 
     return promedioArr;
 }
-
-const lista1 = [100, 200, 500, 400000000];
 
 function esPar(num)
 {
@@ -60,3 +51,28 @@ function calcularMediana(arr)
 
     return mediana;
 }
+
+const lista1 = [1, 2, 3, 1, 2, 3, 4, 2, 2, 2, 1];
+
+const lista1Count = {};
+
+// Aqui con el metodo map, sumamos la cantidad de veces que aparece un numero dentro de la lista1
+lista1.map(
+    function(elemento) {
+        if (lista1Count[elemento]) {
+            lista1Count[elemento] += 1;
+        }
+        else {
+            lista1Count[elemento] = 1;
+        }
+    }
+);
+
+// Aqui la funcion Object.entries convierte el objeto en un array con arrays de todos los elementos de ese objeto.
+// Y como ya es un array, con el metodo sort, podemos ordenarlo de menor a mayor, solo indicandole en el return el valor que va a evaluar que seria la posicion [1] de cada array. Y asi obtenemos nuestro array de arrays ordenado.
+const lista1Array = Object.entries(lista1Count).sort((a, b) => a[1] - b[1]);
+
+// La moda seria el ultimo elemento de ese array ya que es el elemento que mas veces se repite en el array original.
+const moda = lista1Array[lista1Array.length - 1];
+
+const modaValue = moda[0];
