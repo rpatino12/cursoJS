@@ -52,27 +52,28 @@ function calcularMediana(arr)
     return mediana;
 }
 
-const lista1 = [1, 2, 3, 1, 2, 3, 4, 2, 2, 2, 1];
-
-const lista1Count = {};
-
-// Aqui con el metodo map, sumamos la cantidad de veces que aparece un numero dentro de la lista1
-lista1.map(
-    function(elemento) {
-        if (lista1Count[elemento]) {
-            lista1Count[elemento] += 1;
+function calcularModa(lista)
+{
+    const listaCount = {};
+    
+    // Aqui con el metodo map, sumamos la cantidad de veces que aparece un numero dentro de la lista y lo guardamos en listaCount
+    lista.map(
+        function(elemento) {
+            if (listaCount[elemento]) {
+                listaCount[elemento] += 1;
+            }
+            else {
+                listaCount[elemento] = 1;
+            }
         }
-        else {
-            lista1Count[elemento] = 1;
-        }
-    }
-);
-
-// Aqui la funcion Object.entries convierte el objeto en un array con arrays de todos los elementos de ese objeto.
-// Y como ya es un array, con el metodo sort, podemos ordenarlo de menor a mayor, solo indicandole en el return el valor que va a evaluar que seria la posicion [1] de cada array. Y asi obtenemos nuestro array de arrays ordenado.
-const lista1Array = Object.entries(lista1Count).sort((a, b) => a[1] - b[1]);
-
-// La moda seria el ultimo elemento de ese array ya que es el elemento que mas veces se repite en el array original.
-const moda = lista1Array[lista1Array.length - 1];
-
-const modaValue = moda[0];
+    );
+    
+    // Aqui la funcion Object.entries convierte el objeto en un array con arrays de todos los elementos de ese objeto.
+    // Y como ya es un array, con el metodo sort, podemos ordenarlo de menor a mayor, solo indicandole en el return el valor que va a evaluar que seria la posicion [1] de cada array. Y asi obtenemos nuestro array de arrays ordenado.
+    const listaArray = Object.entries(listaCount).sort((a, b) => a[1] - b[1]);
+    
+    // La moda seria el ultimo elemento de ese array ya que es el elemento que mas veces se repite en el array original.
+    const moda = listaArray[listaArray.length - 1];
+    
+    return moda;
+}
