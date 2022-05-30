@@ -77,3 +77,30 @@ function calcularModa(lista)
     
     return moda;
 }
+
+function onClickButtonStatistics() 
+{
+    const lista = document.getElementById("listaUsuario");
+    const listaValue = lista.value;
+    const listaArray = listaValue.split(" ");
+    const numbersArray = listaArray.map(a => parseFloat(a));
+
+    const promedio = calcularMediaAritmetica(numbersArray);
+    const mediana = calcularMediana(numbersArray);
+    const moda = calcularModa(numbersArray);
+
+    const averageResult = document.getElementById("averageResult");
+    const medianResult = document.getElementById("medianResult");
+    const modeResult = document.getElementById("modeResult");
+
+    if (promedio == "NaN" || mediana == "NaN" || moda[0] == "NaN")
+    {
+        alert("Por favor ingresa valores numericos válidos")
+    }
+    else
+    {
+        averageResult.innerText = "Promedio = " + promedio.toFixed(3);
+        medianResult.innerText = "Mediana = " + mediana;
+        modeResult.innerText = "Moda = " + moda[0] + " que se repite " + moda[1] + " veces";
+    }
+}

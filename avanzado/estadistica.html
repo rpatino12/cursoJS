@@ -8,7 +8,27 @@
 </head>
 <body>
     <h1>Promedio, mediana y moda</h1>
-    
+    <main>
+        <section>
+           <h2>Calculadora estadística</h2>
+           <form>
+               <label for="listaUsuario">
+                   Ingresa la lista de numeros (separados por espacios) para calcular el promedio, la mediana y la moda:
+               </label>
+               <input id="listaUsuario" type="text">
+               <div class="buttons-container">
+                   <button type="button" onclick="onClickButtonStatistics()">
+                       Calcular
+                   </button>
+               </div>
+           </form>
+           <section class="results">
+               <p id="averageResult"></p>
+               <p id="medianResult"></p>
+               <p id="modeResult"></p>
+           </section> 
+        </section>
+    </main>
     <script src="./estadistica.js"></script>
 </body>
 </html>
