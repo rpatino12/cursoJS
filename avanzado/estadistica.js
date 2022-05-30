@@ -78,6 +78,55 @@ function calcularModa(lista)
     return moda;
 }
 
+// Clase 18: calculo de promedio ponderado
+const notes = [
+    {
+        course: "Tecnologia",
+        note: 10,
+        credit: 2,
+    },
+    {
+        course: "Programacion",
+        note: 8,
+        credit: 5,
+    },
+    {
+        course: "Finanzas personales",
+        note: 7,
+        credit: 5,
+    },
+];
+
+// Creamos una funcion que recibe como parametro un array que contiene objetos
+function calcularPromedioPonderado(arr)
+{
+    const notesWithCredit = arr.map(function(noteObject){
+        return noteObject.note * noteObject.credit;
+    });
+
+    const sumOfNotesWithCredit = notesWithCredit.reduce(
+        function(sum = 0, newVal)
+        {
+            return sum + newVal;
+        }
+    )
+
+    const credits = arr.map(function(noteObject){
+        return noteObject.credit;
+    });
+
+    const sumOfCredits = credits.reduce(
+        function(sum = 0, newVal)
+        {
+            return sum + newVal;
+        }
+    )
+
+    const promedioPonderadoNotasConCreditos = sumOfNotesWithCredit / sumOfCredits;
+
+    return promedioPonderadoNotasConCreditos;
+}
+
 function onClickButtonStatistics() 
 {
     const lista = document.getElementById("listaUsuario");
