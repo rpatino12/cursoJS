@@ -51,12 +51,12 @@ const medianaGeneralCol = medianaSalarios(salariosColSorted);
 // Mediana del top 10%
 
 // Primer parametro del metodo splice, que sirve para indicar el indice a partir del cual quiero extraer los elementos del array original
-const spliceStart = salariosColSorted.length * 0.9;
+const sliceStart = parseInt(salariosColSorted.length * 0.9);
 
 // Segundo parametro del metodo splice, que sirve para indicar la cantidad de elementos que quiero extraer del array original
-const spliceCount = salariosColSorted.length - spliceStart; 
+const sliceEnd = salariosColSorted.length; 
 
-const salariosTop10Col = salariosColSorted.splice(spliceStart, spliceCount);
+const salariosTop10Col = salariosColSorted.slice(sliceStart, sliceEnd);
 
 const medianaTop10Col = medianaSalarios(salariosTop10Col);
 
